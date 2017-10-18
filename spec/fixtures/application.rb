@@ -2,6 +2,7 @@ require 'active_support/all'
 require 'action_controller'
 require 'action_dispatch'
 require "active_record"
+require 'acts_as_paranoid'
 
 module Rails
   class App
@@ -13,6 +14,11 @@ module Rails
 	resources :users do 
 	  collection do
 	    post :valid_email
+	  end
+
+	  member do
+	    post :resend_confirmation
+	    post :enable
 	  end
 	end
       end

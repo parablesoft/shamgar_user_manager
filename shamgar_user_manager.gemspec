@@ -35,17 +35,18 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency 'byebug'
 
-  spec.add_development_dependency 'rspec-rails'
-  spec.add_development_dependency 'actionpack'
-  spec.add_development_dependency 'activesupport'
+  spec.add_development_dependency 'rspec-rails', "~> 3.6.0"
+  spec.add_development_dependency 'actionpack', "5.0.2"
   spec.add_development_dependency 'airborne'
   spec.add_development_dependency 'jsonapi-serializers'
   spec.add_development_dependency "sqlite3", '~> 1.3.9'
   spec.add_development_dependency "database_cleaner"
   spec.add_development_dependency "factory_girl"
   spec.add_development_dependency "ffaker"
-  spec.add_development_dependency "activerecord"
+  spec.add_development_dependency "activerecord", "5.0.2"
+  spec.add_development_dependency "activesupport", "5.0.2"
   spec.add_development_dependency "email_validator"
+  spec.add_development_dependency 'acts_as_paranoid',"0.5.0"
 end
 
 

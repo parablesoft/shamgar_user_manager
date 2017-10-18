@@ -28,4 +28,11 @@ describe UsersController, type: :controller do
 
   end
 
+  describe "#enable" do
+
+  end
+
+
+
+
 end
