@@ -9,11 +9,19 @@ require "factory_girl"
 require 'rspec/rails'
 require "byebug"
 require 'jsonapi-serializers'
+require 'shoulda/matchers'
 
 Dir["spec/serializers/**/*.rb"].each {|f| load f}
 Dir["spec/factories/**/*.rb"].each {|f| load f}
 
 load "spec/fixtures/database.rb"
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
 
 RSpec.configure do |config|
 

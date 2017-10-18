@@ -47,6 +47,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "activesupport", "5.0.2"
   spec.add_development_dependency "email_validator"
   spec.add_development_dependency 'acts_as_paranoid',"0.5.0"
+  spec.add_development_dependency 'shoulda-matchers',"3.1.1"
 end
 
 
