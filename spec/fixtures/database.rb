@@ -10,6 +10,8 @@ ActiveRecord::Schema.define(:version => 1) do
     t.datetime :deleted_at
     t.datetime :confirmed_at
     t.string :foo
+    t.datetime :last_sign_in_at
+    t.datetime :created_at
   end
 end
 

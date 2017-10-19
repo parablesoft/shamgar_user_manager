@@ -9,9 +9,14 @@ describe UserResource do
 
   it{ expect(subject.first_name).to eq model.first_name}
   it{ expect(subject.last_name).to eq model.last_name}
+  it{ expect(subject.full_name).to eq model.full_name}
   it{ expect(subject.email).to eq model.email}
   it{ expect(subject.role).to eq model.role}
   it{ expect(subject.confirmed_at).to eq model.confirmed_at}
+  it{ expect(subject.confirmed?).to eq model.confirmed?}
+  it{ expect(subject.disabled?).to eq model.disabled?}
+  it{ expect(subject.last_sign_in_at).to eq model.last_sign_in_at}
+  it{ expect(subject.created_at).to eq model.created_at}
 
 
 
@@ -35,7 +40,7 @@ describe UserResource do
     end
 
 
-    context "add_creatable_attribute configuration" do
+    context "add_creatable_attributes and add_updatable_attributes configuration" do
       before do
 	class UserResource
 	  add_creatable_attributes :foo

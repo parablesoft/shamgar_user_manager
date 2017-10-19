@@ -1,3 +1,4 @@
 class UserResource < ShamgarUserManager::BaseResource
-  add_attributes :confirmed_at
+  attributes :confirmed_at
+
 end

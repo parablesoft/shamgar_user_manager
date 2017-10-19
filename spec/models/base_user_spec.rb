@@ -113,6 +113,26 @@ describe User, type: :model do
 
   end
 
+
+  describe "#unconfirmed?" do
+    context "is confirmed" do
+      it "returns false when confirmed at is nil" do
+	subject.confirmed_at = DateTime.now
+	expect(subject.unconfirmed?).to be_falsy
+      end
+    end
+
+    context "is not confirmed" do
+      it "returns true when confirmed at is nil" do
+	subject.confirmed_at = nil
+	expect(subject.unconfirmed?).to be_truthy
+      end
+
+
+    end
+
+  end
+
   describe "#disabled?" do
 
     context "is not disabled" do

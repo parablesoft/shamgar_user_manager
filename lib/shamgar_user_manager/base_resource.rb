@@ -1,7 +1,7 @@
 module ShamgarUserManager
   class BaseResource < JSONAPI::Resource
 
-    DEFAULT_ATTRIBUTES = [:first_name,:last_name,:email,:role] 
+    DEFAULT_ATTRIBUTES = [:first_name,:last_name,:email,:role,:confirmed?,:full_name,:disabled?,:last_sign_in_at,:created_at] 
     DEFAULT_CREATABLE_ATTRIBUTES = [:first_name,:last_name,:email,:role]
     DEFAULT_UPDATABLE_ATTRIBUTES = [:first_name,:last_name,:email,:role]
 
@@ -11,9 +11,6 @@ module ShamgarUserManager
     class_attribute :additional_updatable_attributes
 
 
-    def self.add_attributes(*extra_attributes)
-      attributes(*extra_attributes)
-    end
 
     def self.add_creatable_attributes(*attributes)
       self.additional_creatable_attributes = attributes

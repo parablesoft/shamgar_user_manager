@@ -27,6 +27,10 @@ module ShamgarUserManager
       confirmed_at.present?
     end
 
+    def unconfirmed?
+      !confirmed?
+    end
+
     def disabled?
       deleted?
     end
