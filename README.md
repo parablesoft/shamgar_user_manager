@@ -1,8 +1,6 @@
-# ShamgarUserManager
+# shamgar\_user\_manager
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/shamgar_user_manager`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Provides common user and user management application logic.
 
 ## Installation
 
@@ -22,17 +20,39 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
 
-## Development
+###Model
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```ruby
+include ShamgarUserManager::BaseUser
+```
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+###Controller
 
-## Contributing
+```ruby
+include ShamgarUserManager::UserManagerController
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/shamgar_user_manager. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+###Resource
+```ruby
+class Api::V1::UserResource < ShamgarUserManager::BaseResource
+end
+```
+
+###Routes
+```ruby
+user_manager_for(resource_name,resource_method)
+```
+
+* ```resource_name``` - e.g :users
+* ```resource_method``` - e.g resource or jsonapi-resources
+
+###Generator
+
+```
+rails g shamgar_user_manager:resource resource_name_and_path
+```
+* ```resource_name_and_path``` - e.g: Api::V1::User
 
 
 ## License
