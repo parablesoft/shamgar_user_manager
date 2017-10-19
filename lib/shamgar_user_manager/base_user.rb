@@ -7,14 +7,12 @@ module ShamgarUserManager
 	acts_as_paranoid
 	before_save :ensure_authentication_token
 	after_destroy :change_authentication_token!
-
 	scope :unconfirmed, ->{where(confirmed_at: nil)}
 	scope :confirmed, ->{where.not(confirmed_at: nil)}
       end
     end
 
     ROLE_ADMIN = "admin"
-
 
     def admin?
       return false if role.nil?

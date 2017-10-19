@@ -9,6 +9,7 @@ ActiveRecord::Schema.define(:version => 1) do
     t.string :authentication_token
     t.datetime :deleted_at
     t.datetime :confirmed_at
+    t.string :foo
   end
 end
 
@@ -16,4 +17,9 @@ end
 
 class User < ActiveRecord::Base
   include ShamgarUserManager::BaseUser
+end
+
+class AltUserClass < ActiveRecord::Base
+  include ShamgarUserManager::BaseUser
+  self.table_name = "users"
 end

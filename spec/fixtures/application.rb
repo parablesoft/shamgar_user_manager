@@ -3,6 +3,7 @@ require 'action_controller'
 require 'action_dispatch'
 require "active_record"
 require 'acts_as_paranoid'
+require "shamgar_user_manager/routing"
 
 module Rails
   class App
@@ -11,16 +12,7 @@ module Rails
       return @routes if defined?(@routes)
       @routes = ActionDispatch::Routing::RouteSet.new
       @routes.draw do
-	resources :users do 
-	  collection do
-	    post :valid_email
-	  end
-
-	  member do
-	    post :resend_confirmation
-	    post :enable
-	  end
-	end
+	user_manager_for(:users,:resources)
       end
       @routes
     end

@@ -1,13 +1,15 @@
 require "bundler/setup"
+require "byebug"
+require "rails"
 require 'fixtures/application'
 require "shamgar_user_manager"
 require 'fixtures/controllers'
+require 'fixtures/resources'
 require "airborne"
 require 'ffaker'
 require "database_cleaner"
 require "factory_girl"
 require 'rspec/rails'
-require "byebug"
 require 'jsonapi-serializers'
 require 'shoulda/matchers'
 
